@@ -24,7 +24,7 @@ export default class App extends React.Component {
         <Text>Cabeçalho</Text>
         <Dropdown label="Selecione um territorio" data={data} />
         <Home />
-        <Text>Rodapé</Text>
+        <Text>Rodapé.</Text>
         <Text>Rodapé</Text>
       </View>
     );
