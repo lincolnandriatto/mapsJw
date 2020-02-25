@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import Home from "./src/home.js";
 import Data from "./src/data.js";
-import { API_KEY, AUTH_DOMAIN } from "react-native-dotenv";
 
 export default class App extends React.Component {
   render() {
@@ -25,12 +24,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f5fcff",
 
-    justifyContent: "center"
-  },
-  itensText: {
-    flex: 1,
-    backgroundColor: "#f5fcff",
-    alignItems: "center",
     justifyContent: "center"
   }
 });

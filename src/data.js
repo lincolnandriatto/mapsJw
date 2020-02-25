@@ -1,14 +1,10 @@
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import Fire from "./Fire.js";
 import { Dropdown } from "react-native-material-dropdown";
 
 export default class Data extends React.Component {
   state = {
-    dados: [
-      { name: "test", latitude: 37.8025259, longitude: -122.4351431 },
-      { name: "test2", latitude: 37.7896386, longitude: -122.421646 }
-    ],
     mapas: { territorios: [{ name: "territorio1" }] },
     territoriosLista: []
   };
