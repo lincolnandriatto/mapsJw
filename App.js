@@ -1,31 +1,20 @@
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
-import { Dropdown } from "react-native-material-dropdown";
-import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import Home from "./src/home.js";
+import Data from "./src/data.js";
+import { API_KEY, AUTH_DOMAIN } from "react-native-dotenv";
+
 export default class App extends React.Component {
   render() {
-    let data = [
-      {
-        value: "A1"
-      },
-      {
-        value: "B1"
-      },
-      {
-        value: "C1"
-      }
-    ];
     return (
       <View style={styles.container}>
-        <Text>Cabeçalho</Text>
-        <Text>Cabeçalho</Text>
-        <Text>Cabeçalho</Text>
-        <Text>Cabeçalho</Text>
-        <Dropdown label="Selecione um territorio" data={data} />
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <Data />
         <Home />
-        <Text>Rodapé.</Text>
-        <Text>Rodapé.</Text>
+        <Text></Text>
+        <Text></Text>
       </View>
     );
   }
