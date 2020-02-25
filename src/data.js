@@ -4,10 +4,17 @@ import Fire from "./Fire.js";
 import { Dropdown } from "react-native-material-dropdown";
 
 export default class Data extends React.Component {
-  state = {
-    mapas: { territorios: [{ name: "territorio1" }] },
-    territoriosLista: []
-  };
+  constructor(props) {
+    super(props);
+    this.seleciona = this.seleciona.bind(this);
+    this.state = {
+      mapas: { territorios: [{ name: "territorio1" }] },
+      territoriosLista: [],
+      valor: "test",
+      label: props.territorioSelecionado
+    };
+  }
+
   componentWillMount() {
     // Fire.db()
     //   .set({
@@ -43,7 +50,10 @@ export default class Data extends React.Component {
 
       while (true) {
         if (mapas.territorios[index].name) {
-          territoriosLista.push({ value: mapas.territorios[index].name });
+          territoriosLista.push({
+            value: mapas.territorios[index].name,
+            label: mapas.territorios[index].name
+          });
         } else {
           break;
         }
@@ -60,11 +70,18 @@ export default class Data extends React.Component {
     });
   }
 
+  seleciona(value) {
+    this.setState({ label: value });
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Dropdown
+          style={{ borderBottomColor: "black", borderBottomWidth: 1 }}
+          value={this.state.label}
           label="Selecione um território"
+          onChangeText={this.props.selecionaTerritorio}
           data={this.state.territoriosLista}
         />
       </View>
@@ -74,6 +91,7 @@ export default class Data extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#f5fcff"
+    backgroundColor: "#f5fcff",
+    width: "100%"
   }
 });
