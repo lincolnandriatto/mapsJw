@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import Data from "./data.js";
 import Maps from "./maps.js";
 
@@ -7,8 +7,10 @@ export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.selecionaTerritorio = this.selecionaTerritorio.bind(this);
+    this.setTerritoriosLista = this.setTerritoriosLista.bind(this);
     this.state = {
       territorioSelecionado: "",
+      territoriosListaDataBase: [],
       territorios: [
         {
           coordenadas: [
@@ -33,28 +35,42 @@ export default class Home extends React.Component {
   }
 
   selecionaTerritorio(value) {
-    if (value === "Território1") {
+    this.setState({ valorSelecionado1: value });
+    if (value === "Territorio1") {
       this.setState({
-        territorioSelecionado: JSON.stringify(this.state.territorios[0])
+        territorioSelecionado: JSON.stringify(
+          this.state.territoriosListaDataBase[0].territorio
+        )
       });
     } else {
       this.setState({
-        territorioSelecionado: JSON.stringify(this.state.territorios[1])
+        territorioSelecionado: JSON.stringify(
+          this.state.territoriosListaDataBase[1].territorio
+        )
       });
     }
   }
 
-  render() {
-    if (!this.state.territorioSelecionado) {
-      this.state.territorioSelecionado = JSON.stringify(
-        this.state.territorios[0]
-      );
+  setTerritoriosLista(territorios) {
+    if (this.state) {
+      this.state.territoriosListaDataBase = territorios;
     }
+  }
 
+  render() {
+    // if (!this.state.territorioSelecionado) {
+    //   this.state.territorioSelecionado = JSON.stringify(
+    //     this.state.territorios[0]
+    //     // this.state.territoriosListaDataBase[0].territorio
+    //   );
+    // }
     return (
       <View style={styles.container}>
         <Text style={{ borderWidth: 1, width: 300 }}>Territórios</Text>
-        <Data selecionaTerritorio={this.selecionaTerritorio} />
+        <Data
+          selecionaTerritorio={this.selecionaTerritorio}
+          territoriosLista={this.setTerritoriosLista}
+        />
         <Maps territorioSelecionado={this.state.territorioSelecionado} />
       </View>
     );
