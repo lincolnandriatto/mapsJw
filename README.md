@@ -1,1 +1,1 @@
-Aplicação para mapas
+Aplicação para visualização de mapas, territórios e localização de pessoas do time percorrendo o território.
