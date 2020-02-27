@@ -17,22 +17,22 @@ export default class Maps extends React.Component {
         provider={PROVIDER_GOOGLE}
         showsUserLocation
         region={{
-          latitude: 37.78825,
-          longitude: -122.4324,
-          latitudeDelta: 0.092,
-          longitudeDelta: 0.035
+          latitude: -23.629847,
+          longitude: -46.586819,
+          latitudeDelta: 0.005,
+          longitudeDelta: 0.005
         }}
       >
         <Polygon
           coordinates={
             this.props.territorioSelecionado
               ? JSON.parse(this.props.territorioSelecionado).coordenadas
-              : [{ name: "1", latitude: 37.7825259, longitude: -122.4351431 }]
+              : [{ name: "1", latitude: -23.629847, longitude: -46.586819 }]
           }
           fillColor={"rgba(100,100,200,0.3)"}
           strokeWidth={3}
         />
-        <Marker coordinate={{ latitude: 37.8025259, longitude: -122.4351431 }}>
+        <Marker coordinate={{ latitude: -23.629847, longitude: -46.586819 }}>
           <Callout>
             <Text>Insteresting city{this.props.territorioSelecionado}</Text>
           </Callout>

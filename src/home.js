@@ -10,27 +10,27 @@ export default class Home extends React.Component {
     this.setTerritoriosLista = this.setTerritoriosLista.bind(this);
     this.state = {
       territorioSelecionado: "",
-      territoriosListaDataBase: [],
-      territorios: [
-        {
-          coordenadas: [
-            { name: "1", latitude: 37.8025259, longitude: -122.4351431 },
-            { name: "2", latitude: 37.7896386, longitude: -122.421646 },
-            { name: "3", latitude: 37.7665248, longitude: -122.4161628 },
-            { name: "4", latitude: 37.7734153, longitude: -122.4577787 },
-            { name: "5", latitude: 37.7948605, longitude: -122.4596065 }
-          ]
-        },
-        {
-          coordenadas: [
-            { name: "1", latitude: 37.7825259, longitude: -122.4351431 },
-            { name: "2", latitude: 37.7896386, longitude: -122.421646 },
-            { name: "3", latitude: 37.7665248, longitude: -122.4161628 },
-            { name: "4", latitude: 37.7734153, longitude: -122.4577787 },
-            { name: "5", latitude: 37.7948605, longitude: -122.4596065 }
-          ]
-        }
-      ]
+      territoriosListaDataBase: []
+      // territorios: [
+      //   {
+      //     coordenadas: [
+      //       { name: "1", latitude: 37.8025259, longitude: -122.4351431 },
+      //       { name: "2", latitude: 37.7896386, longitude: -122.421646 },
+      //       { name: "3", latitude: 37.7665248, longitude: -122.4161628 },
+      //       { name: "4", latitude: 37.7734153, longitude: -122.4577787 },
+      //       { name: "5", latitude: 37.7948605, longitude: -122.4596065 }
+      //     ]
+      //   },
+      //   {
+      //     coordenadas: [
+      //       { name: "1", latitude: 37.7825259, longitude: -122.4351431 },
+      //       { name: "2", latitude: 37.7896386, longitude: -122.421646 },
+      //       { name: "3", latitude: 37.7665248, longitude: -122.4161628 },
+      //       { name: "4", latitude: 37.7734153, longitude: -122.4577787 },
+      //       { name: "5", latitude: 37.7948605, longitude: -122.4596065 }
+      //     ]
+      //   }
+      // ]
     };
   }
 
@@ -66,7 +66,19 @@ export default class Home extends React.Component {
     // }
     return (
       <View style={styles.container}>
-        <Text style={{ borderWidth: 1, width: 300 }}>Territórios</Text>
+        <View
+          style={{
+            borderWidth: 1,
+            borderWidth: 1,
+            width: "100%",
+            backgroundColor: "blue",
+            alignItems: "center"
+          }}
+        >
+          <Text style={{ alignItems: "center", fontSize: 28, color: "white" }}>
+            Territórios
+          </Text>
+        </View>
         <Data
           selecionaTerritorio={this.selecionaTerritorio}
           territoriosLista={this.setTerritoriosLista}
